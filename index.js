@@ -11,12 +11,12 @@ const bodyParser = require('body-parser');
 
 app.use(morgan('dev'));
 app.use(express.static(__dirname+ '/public'));
-
+// next() look for additional functions that could match our endpoint
 app.use((req, res, next) => {
     console.log(req.headers);
     res.statusCode = 200;
     res.setHeader('Content-Type', 'text/html');
-    res.end('<html><body><h1>This is an Express Server</h1></body></html>');
+    next();
 });
 
 app.use(bodyParser.json());
