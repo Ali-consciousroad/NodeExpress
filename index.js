@@ -1,14 +1,14 @@
 const express = require('express');
 const morgan = require('morgan');
 const http = require('http');
-
 const hostname = 'localhost';
 const port = 3000;
-
 const app = express();
 // Body parsing middleware
 const bodyParser = require('body-parser');
+const dishRouter = require('./routes/dishRouter');
 
+app.use('/dishes', dishRouter);
 app.use(morgan('dev'));
 app.use(express.static(__dirname+ '/public'));
 // next() look for additional functions that could match our endpoint
@@ -57,7 +57,7 @@ app.post('/dishes/:dishId', (req, res, next) => {
 app.put('/dishes/:dishId', (req, res, next) => {
     res.write('Updating the dish: ' + req.params.dishId + '\n');
     res.end('Will update the dish: ' + req.body.name +
-        'with details: ' + req.body.description);
+        ' with details: ' + req.body.description);
 })
 
 app.delete('/dishes/:dishId', (req, res, next) => {
