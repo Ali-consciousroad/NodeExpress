@@ -22,7 +22,7 @@ dishRouter.route('/')
     res.end('PUT operation not supported on /dishes');
 })
 .delete((req, res, next) => {
-    res.end('Deleting all dishes');
+    res.end('Deleting all dishess');
 });
 
 module.exports = dishRouter;
