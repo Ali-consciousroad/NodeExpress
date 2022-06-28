@@ -5,15 +5,11 @@ const hostname = 'localhost';
 const port = 3000;
 const app = express();
 // Body parsing middleware
-// Require the multiple modules needed
 const bodyParser = require('body-parser');
+// Require the multiple modules needed
 const dishRouter = require('./routes/dishRouter');
 const promoRouter = require('./routes/promoRouter');
 const leaderRouter = require('./routes/leaderRouter');
-
-// Allow parameters to be used in child routes 
-// dishRouter = express.Router({ mergeParams: true });
-
 
 // Mount the routers on the required endpoints
 app.use('/dishes', dishRouter);

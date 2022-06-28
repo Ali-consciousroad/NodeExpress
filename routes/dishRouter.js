@@ -7,6 +7,7 @@ dishRouter.use(bodyParser.json());
 
 // CRUD route for " ***/dishes/ " endpoint 
 dishRouter.route('/')
+// Use of ES6 anonymous function 
 .all((req,res,next) => {
     res.statusCode = 200;
     res.setHeader('Content-Type', 'text/plain');
