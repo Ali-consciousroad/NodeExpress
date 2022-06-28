@@ -11,7 +11,7 @@ promoRouter.route('/')
     res.setHeader('Content-Type', 'text/plain');
     next();
 })
-// CRUD operations for /dishes endpoint
+// CRUD operations for /promotions endpoint
 .get((req,res,next) => {
     res.end('Will send all the promotions to you!');
 })
